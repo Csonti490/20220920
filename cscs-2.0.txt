@@ -82,4 +82,82 @@ def kisnagykülönbség(lista):
 print(kisnagykülönbség([10, 4, 1, 4, -10, -50, 32, 21]))
 #print(max([10, 4, 1, 4, -10, -50, 32, 21])-min([10, 4, 1, 4, -10, -50, 32, 21])) #!!!Ezt nem vettük!!!
 #--------------------
+#--------------------
+#A függvényünk számítsa ki a megadott
+#szám faktoriálisát.
+#            4! = 4*3*2*1
+#kivétel:    0! = 1
+
+def faktorialis(szam):
+    if(szam != 0): 
+        for i in range(1, szam):
+            szam *= i
+        return szam
+    elif (szam == 0):
+        return 1
+    else:
+        return "Negatív számnak nincsen faktoriálisa!" #!!!Csak gondolom!!!
+print(faktorialis(3))
+
+#def fakt(n):
+#    valasz = 1
+#    if n == 0:
+#        return valasz
+#    else:
+#        for i in range(n): #1-től n-ig megy
+#            valasz *= i+1
+##valasz új értéke = önmaga * az egyel nagyobbal
+#    return valasz
+#print(fakt(3))
+#--------------------
+#karakterlista = ['k','a','m','l']
+#    - betűk idézőjelbe
+#    - for ezen is működik
+#in parancs:
+#Szerepel-e a betű változóban lévő karakter
+#a karakterlistában?
+#betű = 'm'
+#    if betű in karakterlista:
+#        return True
+#Bekérünk egy szöveget és megszámoljuk,
+#hogy hány darab magánhangzó van benne?
+#Pl.:
+#mhszamol("valami") -> 3
+#mhszamol("hely") -> 1
+#    -for, segédváltozó (magánhangzólista)
+
+segédváltozó = ['a','á','e','é','o','ó','ö','ő','ü','ű','i','í'] #mh
+
+def mhszamol(szoveg): #def magánhangzók(szo):
+    a = 0 #osszesen = 0
+    for i in szoveg: #for i in szo
+        if i in segédváltozó: #if i in mh
+            a += 1 #osszesen += 1
+    return a #return osszesen
+
+print(mhszamol("miafene")) #print(magánhangzók("ezazaszo"))
+#--------------------
+#-Karaktercsere:
+#    - replace parancs
+#    - váltónév.replace(mit,mire)
+#szo = "valami"
+#alt = "@"
+#szo = szo.replace("a",alt)
+#A függvény 2 paramétert kér be:
+#   egy szót és karakter.
+#Pl.:
+# csere("valami", "#") --> "v#l#m#"
+# for, if, replace()
+
+def csere(szo,mit): #def karaktercsere(szoveg, kar):
+#Végigmegy a szó betűin
+    for i in szo: #for i in szoveg:
+    #Ha az adott betű szerepel a magánh. listában
+        if i in segédváltozó: # if kar in "aeiou": #Nem csak lista jó
+            szo = szo.replace(i,mit) #szoveg = szoveg.replace(i,kar)
+    return szo #return szoveg
+
+print(csere("valami","#")) #print(karaktercsere("valami","#"))
+#--------------------
+
 
