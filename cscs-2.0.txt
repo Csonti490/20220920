@@ -1,3 +1,4 @@
+#-------------------- Írta: Nagy Dávid
 #Egyenlőségvizsgálat:
 #
 #=       Matematikai műveleteknél
