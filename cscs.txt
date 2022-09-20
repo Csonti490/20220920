@@ -1,0 +1,85 @@
+#Egyenlőségvizsgálat:
+#
+#=       Matematikai műveleteknél
+#==      Sima egyenlőségvizsgálatnál (érték)
+#===     Ha a tartalom mellett a típust is mézzük
+#--------------------
+#If-else:
+#	if (LogikaiVizsgálat):
+#		Műveletek, ha teljesűl
+#	elif (MásikLogikaiÁllítás):
+#		Művelet, ha ez a másik feltétel telj.
+#	else:
+#		Műveletek, ha nem teljesül
+#--------------------		
+#A függbény nézze meg, hogy egy adott
+#bekért szám negatív-e?
+
+def poz(a):#if negatíve(szam):
+    if(a>=0): #if szam <0:
+        return "Pozitív"; #return True
+    else: #else:
+        return "Nem pozitív" #return False
+
+print(poz(3))
+#--------------------
+#Számlisták:
+#lista1 = [4, 5, 1, 3]
+#a = lista1[0]
+#    - a tartalma = 4
+#    - listanév[index]
+#    - az index 0-val kezdődik
+#    - listanév[0] --> A lista 1. eleme
+#    - listanév[1] --> A lista 2. eleme
+#--------------------
+#Keressük meg egy lista legnagyobbb elemét.
+#Pl.:
+#legnagyobbszám([4, 5, 1, 3]) -> 5
+#legnagyobbszám([300, 200, 600, 150]) -> 600
+#    - for ciklus
+#    - if-else
+#    - lista indexelés
+
+lista1 = [4, 5, 1, 3]
+lista2 = [300, 200, 600, 150]
+def legnagyobbszám(lista): #def maximumkeres(lista):
+    nagy = lista[0] #max = lista[0] #Kezdetben az 1. elem a legnagyobb elem
+    for i in lista: #for i in lista: #Végigmegyünk a listán
+        if i>nagy: # if i > max: #"Ha az adott elem nagyobb"
+            nagy = i # max = i #"Akkor az az új max"
+    return nagy # return max #Ez már a for-on kívül van
+            
+print(legnagyobbszám(lista1)) # print maximumkeres([2,7,9,3,4])
+print(legnagyobbszám(lista2))  
+
+#print(max(lista1)) #!!!Ezt nem vettük!!!
+#print(max(lista2)) #!!!Ezt nem vettük!!!
+#--------------------
+#Alakítsuk át úgy, hogy a legkisebb elemet keresse
+def minimum(lista):
+    kicsi = lista[0]
+    for i in lista:
+        if i<kicsi:
+            kicsi = i
+    return kicsi
+
+print(minimum([2, 7, 9, 3, 4]))
+#print(min([2, 7, 9, 3, 4])) #!!!Ezt nem vettük!!!
+#--------------------
+#A függvényünk keresse meg a legkisebb és
+#legnagyobb elem különbségét.
+#Pl.: [10, 4, 1, 4, -10, -50, 32, 21] -> 82
+def kisnagykülönbség(lista):
+    kicsi = lista[0]
+    nagy = lista[0]
+    for i in lista:
+        if i<kicsi:
+            kicsi = i
+        if i>nagy:
+            nagy = i
+    return nagy-kicsi
+
+print(kisnagykülönbség([10, 4, 1, 4, -10, -50, 32, 21]))
+#print(max([10, 4, 1, 4, -10, -50, 32, 21])-min([10, 4, 1, 4, -10, -50, 32, 21])) #!!!Ezt nem vettük!!!
+#--------------------
+
